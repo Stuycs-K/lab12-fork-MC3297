@@ -16,7 +16,7 @@ int main() {
             int n = rand()%5+1;
             printf("%d %dsec\n", child, n);
             sleep(n);
-            printf("%d finished after %d seconds.\n", child, n);
+            printf("%d finished after %d sec\n", child, n);
             exit(n);//tells parent what sleep time was
         }
         else if (pid < 0) {
@@ -27,7 +27,7 @@ int main() {
 
     int status;
     pid_t done = wait(&status);
-    printf("Main Process %d is done. Child %d slept for %d sec\n", parent, done, WEXITSTATUS(status));
+    printf("Main Process %d is done. Child %d slept for %dsec\n", parent, done, WEXITSTATUS(status));
 
     return 0;
 }
